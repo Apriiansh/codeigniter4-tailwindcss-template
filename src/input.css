@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary: Modern dark blue for a clean, professional look */
+  --color-primary: #1e40af;
+  /* Secondary: Neutral gray for subtle accents */
+  --color-secondary: #6b7280;
+  /* Success: Soft green */
+  --color-success: #10b981;
+  /* Warning: Warm amber */
+  --color-warning: #f59e0b;
+  /* Error: Clean red */
+  --color-error: #ef4444;
+  /* Info: Calm cyan */
+  --color-info: #06b6d4;
+  /* Background: Pure white for minimalism */
+  --color-background: #ffffff;
+  /* Background-secondary: Very light gray for subtle depth */
+  --color-background-secondary: #f9fafb;
+  /* Surface: White or light gray for cards/forms */
+  --color-surface: #ffffff;
+  /* Text: High contrast - dark gray for primary, medium for secondary */
+  --color-text-primary: #111827;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6b7280;
+  /* Font: Clean sans-serif fonts */
+  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-family-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base Typography */
+p {
+  @apply text-base font-normal text-text-secondary leading-relaxed;
+}
+
+ul, ol {
+  @apply text-base font-normal text-text-secondary leading-relaxed;
+}
+
+li {
+  @apply text-base font-normal text-text-secondary leading-relaxed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-text-primary font-sans;
+}
+
+h1 {
+  @apply text-3xl md:text-4xl font-bold;
+}
+
+h2 {
+  @apply text-xl md:text-2xl font-semibold;
+}
+
+h3 {
+  @apply text-lg md:text-xl font-medium;
+}
+
+/* Card Components */
+.card {
+  @apply bg-white rounded-2xl shadow-xl p-8 border border-secondary/10;
+}
+
+.card-hover {
+  @apply hover:shadow-2xl hover:border-primary transition-all duration-300;
+}
+
+/* Layout */
+.layout-main {
+  @apply min-h-screen flex flex-col bg-background;
+}
+
+.container-main {
+  @apply flex flex-col gap-6 items-center m-4 p-4 flex-1 bg-background-secondary;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-primary text-white px-4 py-3 rounded-lg hover:opacity-90 font-semibold w-full text-base transition-all duration-200;
+}
+
+.btn-success {
+  @apply bg-success text-white px-4 py-3 rounded-lg hover:opacity-90 font-semibold w-full text-base transition-all duration-200;
+}
+
+.btn-warning {
+  @apply bg-warning text-white px-4 py-3 rounded-lg hover:opacity-90 font-semibold w-full text-base transition-all duration-200;
+}
+
+.btn-error {
+  @apply bg-error text-white px-4 py-3 rounded-lg hover:opacity-90 font-semibold w-full text-base transition-all duration-200;
+}
+
+/* Form Components - Reusable Templates */
+.form-group {
+  @apply space-y-1.5;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-text-primary;
+}
+
+.form-input {
+  @apply w-full px-4 py-2.5 border border-secondary/30 rounded-lg 
+         bg-white text-text-primary placeholder:text-text-muted
+         focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary 
+         transition-all duration-200;
+}
+
+.form-input-error {
+  @apply border-error focus:ring-error/50 focus:border-error;
+}
+
+.form-error-message {
+  @apply text-sm text-error mt-1;
+}
+
+.form-helper-text {
+  @apply text-sm text-text-muted mt-1;
+}
+
+.form-checkbox {
+  @apply h-4 w-4 text-primary border-secondary rounded
+         focus:ring-2 focus:ring-primary/50 cursor-pointer;
+}
+
+.form-checkbox-label {
+  @apply ml-2 text-sm text-text-secondary cursor-pointer select-none;
+}
+
+/* Alert Components */
+.alert {
+  @apply p-4 rounded-lg border;
+}
+
+.alert-error {
+  @apply bg-error/10 border-error text-error;
+}
+
+.alert-success {
+  @apply bg-success/10 border-success text-success;
+}
+
+.alert-warning {
+  @apply bg-warning/10 border-warning text-warning;
+}
+
+.alert-info {
+  @apply bg-info/10 border-info text-info;
+}
+
+/* Text Utilities */
+.text-responsive {
+  @apply text-2xl md:text-3xl font-bold text-text-primary;
+}
+
+.text-heading {
+  @apply text-3xl md:text-4xl font-bold text-text-primary;
+}
+
+.text-subheading {
+  @apply text-xl md:text-2xl font-semibold text-text-primary;
+}
+
+.text-regular {
+  @apply text-base md:text-lg font-normal text-text-secondary;
+}
+
+/* Link Styles */
+.link-primary {
+  @apply text-primary hover:underline font-medium transition-all;
+}
+
+.link-secondary {
+  @apply text-text-secondary hover:text-primary transition-colors;
+}
