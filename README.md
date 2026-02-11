@@ -85,11 +85,10 @@ Main CSS file is located at `public/assets/css/input.css`. Output will be genera
 ```
 codeigniter4-tailwindcss-template/
 ├── app/                    # CodeIgniter application
-│   ├── Controllers/       # Controllers (Home, Dashboard)
+│   ├── Controllers/       # Controllers
 │   ├── Views/             # View templates
 │   │   ├── welcome_message.php    # Landing page
 │   │   ├── demo_form.php         # Demo form
-│   │   └── dashboard.php         # Dashboard
 │   └── Config/            # Application configurations
 ├── public/                # Public web files
 │   ├── assets/css/        # Tailwind CSS files
