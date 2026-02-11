@@ -1,20 +1,20 @@
-# CodeIgniter 4 + Shield Auth + Tailwind CSS
+# CodeIgniter 4 + Tailwind CSS Template
 
-A CodeIgniter 4 template integrated with Shield Authentication and Tailwind CSS for rapid and secure web application development.
+A clean CodeIgniter 4 template showcasing beautiful Tailwind CSS integration for modern web development.
 
 ## Description
 
-This template provides a starter kit for building web applications using CodeIgniter 4, with robust authentication through Shield, and modern styling using Tailwind CSS. Ideal for projects requiring login/logout systems, user management, and responsive UI.
+This template demonstrates how to integrate CodeIgniter 4 with Tailwind CSS CLI. Perfect for learning modern CSS framework with utility-first approach, custom themes, responsive design, and component classes.
 
 ## Features
 
-- **CodeIgniter 4 Framework**: A lightweight, fast, flexible, and secure PHP full-stack web framework
-- **Shield Authentication**: Complete authentication system with features like login, logout, registration, password reset, and role management
-- **Tailwind CSS**: Utility-first CSS framework for fast and consistent styling
-- **Responsive Design**: Responsive UI for desktop and mobile
-- **Session Management**: Secure session handling
-- **CSRF Protection**: Protection against CSRF attacks
-- **Database Integration**: Support for various databases (MySQL, PostgreSQL, etc.)
+- **CodeIgniter 4 Framework**: Latest version with clean setup
+- **Tailwind CSS CLI**: Direct integration without PostCSS complexity  
+- **Custom Theme System**: Beautiful color scheme with @theme configuration
+- **Responsive Design**: Mobile-first approach with breakpoint classes
+- **Component Classes**: Reusable .card, .btn-primary, .form-input classes
+- **Modern Typography**: Nunito font with Google Fonts integration
+- **Demo Form**: Interactive form showcasing Tailwind CSS features
 
 ## System Requirements
 
@@ -27,8 +27,8 @@ This template provides a starter kit for building web applications using CodeIgn
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/username/ci4-tailwindcss-shield.git
-   cd ci4-tailwindcss-shield
+   git clone https://github.com/username/codeigniter4-tailwindcss-template.git
+   cd codeigniter4-tailwindcss-template
    ```
 
 2. **Install PHP dependencies:**
@@ -41,101 +41,107 @@ This template provides a starter kit for building web applications using CodeIgn
    npm install
    ```
 
-4. **Configure environment:**
-   - Copy `env` to `.env`
-   - Adjust database settings, base URL, and other configurations in `.env`
+4. **Configure environment (optional for demo):**
+   - Copy `env` to `.env` if you plan to use database features
+   - Adjust database settings and base URL in `.env`
 
-5. **Run database migrations:**
+5. **Build Tailwind CSS:**
    ```bash
-   php spark migrate --all
-   ```
-
-6. **Run database seeders (optional, for sample data):**
-   ```bash
-   php spark db:seed
-   ```
-
-7. **Build Tailwind CSS:**
-   ```bash
-   npm run build
+   npm run build:css
    ```
    Or for development with watch mode:
    ```bash
-   npm run dev
+   npm run dev:css
    ```
 
 ## Configuration
 
-### Database
-Edit `.env` file to set up database connection:
-```
-database.default.hostname = localhost
-database.default.database = ci4_shield
-database.default.username = your_username
-database.default.password = your_password
-database.default.DBDriver = MySQLi
-```
-
-### Shield Authentication
-Shield is configured by default. For further customization, refer to the Shield documentation at [codeigniter4-shield](https://github.com/codeigniter4/shield).
-
 ### Tailwind CSS
-Main CSS file is located at `src/input.css`. Output will be generated to `public/css/output.css`.
+Main CSS file is located at `public/assets/css/input.css`. Output will be generated to `public/assets/css/output.css`.
 
 ## Usage
 
-1. **Run Tailwind CSS CLI in watch mode (for development):**
+1. **Development workflow:**
    ```bash
-   npx @tailwindcss/cli -i ./src/input.css -o ./public/css/output.css --watch
+   # Start both servers in one command
+   ./start-dev.sh
+   
+   # Or run separately:
+   composer run dev     # CodeIgniter server
+   npm run dev:css      # Tailwind watch mode
    ```
-   This will automatically rebuild CSS when you make changes to `src/input.css`.
 
-2. **Run development server:**
+2. **Access the application:**
+   - Landing page: `http://localhost:8080`
+   - Demo form: `http://localhost:8080/demo/form`
+   - Dashboard: `http://localhost:8080/dashboard`
+
+3. **Build for production:**
    ```bash
-   php spark serve
+   npm run build:css
    ```
-
-3. **Access the application in browser:**
-   Open `http://localhost:8080`
-
-4. **Login:**
-   - Default username: admin@example.com
-   - Password: password
 
 ## Project Structure
 
 ```
-ci4-tailwindcss-shield/
-├── app/                    # Main application code
-│   ├── Config/            # Application configurations
-│   ├── Controllers/       # Controllers
-│   ├── Models/            # Models
+codeigniter4-tailwindcss-template/
+├── app/                    # CodeIgniter application
+│   ├── Controllers/       # Controllers (Home, Dashboard)
 │   ├── Views/             # View templates
-│   └── ...
-├── public/                # Public files (CSS, JS, images)
-│   ├── css/
-│   └── ...
-├── src/                   # Tailwind CSS source
-├── vendor/                # Composer dependencies
-├── writable/              # Writable files (cache, logs, etc.)
-├── composer.json
-├── package.json
-└── ...
+│   │   ├── welcome_message.php    # Landing page
+│   │   ├── demo_form.php         # Demo form
+│   │   └── dashboard.php         # Dashboard
+│   └── Config/            # Application configurations
+├── public/                # Public web files
+│   ├── assets/css/        # Tailwind CSS files
+│   │   ├── input.css      # Source file with @theme
+│   │   └── output.css     # Compiled CSS
+│   └── index.php         # Entry point
+├── package.json          # npm scripts and dependencies
+├── composer.json         # PHP dependencies  
+├── start-dev.sh         # Development server script
+└── README.md
 ```
 
-## Testing
+## Tailwind CSS Features Showcase
 
-Run unit tests with:
+### Custom Theme System
+- Color variables defined in `@theme {}` block
+- Primary, secondary, success, warning, error colors
+- Custom font family (Nunito)
+
+### Utility Classes
+- Responsive design: `md:text-xl`, `lg:grid-cols-3`
+- Spacing: `p-4`, `mb-6`, `space-y-4`
+- Colors: `bg-primary`, `text-white`, `border-secondary`
+- Layout: `flex`, `grid`, `min-h-screen`
+
+### Component Classes
+- `.card` - Card container with shadow and padding
+- `.btn-primary` - Primary button styling
+- `.form-input` - Form input with focus states
+- `.alert` - Alert messages with variants
+
+## Development Tips
+
+### CSS Build Process
 ```bash
-./vendor/bin/phpunit
+# Watch for changes (development)
+npm run dev:css
+
+# Build once (production) 
+npm run build:css
 ```
 
-## Deployment
-
-1. Ensure all dependencies are installed
-2. Run database migrations
-3. Build Tailwind CSS for production
-4. Configure web server to point to the `public/` folder
+### Adding New Colors
+1. Add color variable in `input.css` @theme block:
+   ```css
+   @theme {
+     --color-brand: #your-color;
+   }
+   ```
+2. Use in HTML: `bg-brand`, `text-brand`, etc.
+3. Rebuild CSS: `npm run build:css`
 
 ## Contributing
 
@@ -145,11 +151,11 @@ Please create issues or pull requests for contributions.
 
 This project uses the MIT license. See the LICENSE file for more details.
 
-## Additional Documentation
+## Additional Resources
 
 - [CodeIgniter 4 User Guide](https://codeigniter.com/user_guide/)
-- [Shield Documentation](https://github.com/codeigniter4/shield)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Tailwind CSS CLI](https://tailwindcss.com/docs/installation/tailwind-cli)
 
 ## Server Requirements
 
@@ -169,23 +175,3 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-# ci4-tailwindcss-shieldauth

@@ -7,12 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-// Custom auth routes
-$routes->get('login', 'AuthController::loginView', ['as' => 'login']);
-$routes->post('login', 'AuthController::login');
-$routes->get('logout', 'AuthController::logout', ['as' => 'logout']);
-
-service('auth')->routes($routes, ['except' => ['login', 'logout']]);
+// Demo pages
+$routes->get('demo/form', 'Home::demoForm', ['as' => 'demo.form']);
+$routes->post('demo/form', 'Home::processDemoForm');
+$routes->get('dashboard', 'Dashboard::index', ['as' => 'dashboard']);
 
 // Database Test Connection
 $routes->get('/test-db', 'TestConnection::index');
