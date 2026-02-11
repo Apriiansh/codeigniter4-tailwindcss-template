@@ -15,7 +15,7 @@
   <link href="/assets/css/output.css" rel="stylesheet">
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-background via-background-secondary to-surface">
+<body class="min-h-screen bg-linear-to-br from-background via-background-secondary to-surface">
 
   <div class="min-h-screen flex flex-col lg:flex-row">
 

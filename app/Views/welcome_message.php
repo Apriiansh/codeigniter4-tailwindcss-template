@@ -152,7 +152,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 lg:py-32 bg-gradient-to-r from-primary to-blue-600">
+    <section class="py-20 lg:py-32 bg-linear-to-r from-primary to-blue-600">
         <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
                 See Tailwind CSS in Action!

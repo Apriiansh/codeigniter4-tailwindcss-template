@@ -74,7 +74,6 @@ Main CSS file is located at `public/assets/css/input.css`. Output will be genera
 2. **Access the application:**
    - Landing page: `http://localhost:8080`
    - Demo form: `http://localhost:8080/demo/form`
-   - Dashboard: `http://localhost:8080/dashboard`
 
 3. **Build for production:**
    ```bash

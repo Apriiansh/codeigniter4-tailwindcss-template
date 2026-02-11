@@ -43,7 +43,6 @@ echo ""
 echo -e "${YELLOW}Demo Pages:${NC}"
 echo "  • Landing: http://localhost:8080"
 echo "  • Form: http://localhost:8080/demo/form"  
-echo "  • Dashboard: http://localhost:8080/dashboard"
 echo ""
 
 # Tips
