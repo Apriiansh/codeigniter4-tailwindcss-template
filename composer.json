@@ -39,6 +39,7 @@
     },
     "scripts": {
         "dev": "./start-dev.sh",
+        "dev:win": "./start-dev.bat",
         "serve": "php spark serve",
         "test": "phpunit"
     }
